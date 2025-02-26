@@ -1,8 +1,9 @@
 /**
  * Slow and Fast Technique
  */
-const { linkedList } = require("./helper_Functions");
+const { linkedList } = require("./0-helper_Functions");
 let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// output: 5
 let list = linkedList.arrayToList(arr);
 
 function middle_node(head) {

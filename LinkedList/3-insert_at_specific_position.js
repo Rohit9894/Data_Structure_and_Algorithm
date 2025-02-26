@@ -1,5 +1,5 @@
-const { linkedList, createNode } = require("./helper_Functions");
-let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+const { linkedList, createNode } = require("./0-helper_Functions");
+let arr = [1, 2, 3, 4, 5, 6, 7, 8]; // according to indexing
 let list = linkedList.arrayToList(arr);
 
 function insertAtPosition(head, position, data) {
@@ -12,10 +12,8 @@ function insertAtPosition(head, position, data) {
     curr = curr.next;
     count++;
   }
-  //   prev.next = node;
-  //   node.next = curr;
-  node.next = curr.next;
-  curr.next = node;
+ node.next = prev.next;
+  prev.next = node;
   return head;
 }
 const data = insertAtPosition(list, 4, 10);

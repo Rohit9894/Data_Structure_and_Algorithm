@@ -7,4 +7,4 @@ function reverse(str,N){
 }
 let str="Kalvium";
 let N=str.length-1;
-let ans=reverse(str,N);
+let ans=reverse(str,N-1);
