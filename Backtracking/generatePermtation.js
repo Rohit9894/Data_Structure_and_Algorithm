@@ -11,6 +11,7 @@ function generatePermutation(arr, index) {
     for (let i = 0; i < arr.length; i++) {
       temp.push(arr[i]);
     }
+    console.log(temp)
     ans.push(temp);
     return;
   }
@@ -25,5 +26,5 @@ function swap(arr, i, j) {
   arr[i] = arr[j];
   arr[j] = temp;
 }
-generatePermutation([1, 2, 3, 4], 0);
+generatePermutation([1, 2, 3], 0);
 console.log(ans.sort().length);

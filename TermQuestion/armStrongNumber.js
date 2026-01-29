@@ -7,10 +7,10 @@ function isArmstrongNumber(n) {
   let len = n.toString().length;
   let original = n;
   let sum = 0;
-  while (n > 0) {
-    let a = n % 10;
-    sum += Math.pow(a, len);
-    n = Math.floor(n / 10);
+  while (n > 0) {  // n=0
+    let a = n % 10; // 1
+    sum += Math.pow(a, len); // 125+27+1=153
+    n = Math.floor(n / 10); // 0
   }
 
   return sum == original;

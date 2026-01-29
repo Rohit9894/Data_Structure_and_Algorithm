@@ -1,0 +1,51 @@
+const { linkedList } = require("./helper_Functions");
+let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+let list = linkedList.arrayToList(arr);
+
+function rotate_by_k(head, k) {
+  /**
+   * why len=1 ?
+   * Because Question start indexing from 1 .
+   */
+  let len = 1;
+  let length = head;
+  while (length.next != null) {
+    len++;
+    length = length.next;
+  }
+  /**
+   * k if rotation is 0
+   * len=0 if 0 node in linkedList
+   * len=1 if 1 node in linkedList
+   */
+  if (k == 0 || len == 0 || len == 1) {
+    return head;
+  } else {
+    let count = 0;
+    let rotationPoint = len - k; // 5
+    let curr = head;
+    let prev = null;
+    while (count != rotationPoint) {
+      prev = curr;
+      curr = curr.next;
+      count++;
+    }
+    /**
+     * After while loop
+     * prev reached just before the newNode.
+     * curr reached to the newNode.
+     */
+    prev.next = null;
+    let newHead = curr;
+    while (curr.next != null) {
+      curr = curr.next;
+    }
+    /**
+     * Here head becomes 1 2 3 4 5 because we break the linkedList by prev variable .
+     */
+    curr.next = head;
+    head = newHead;
+    return head;
+  }
+}
+console.log(linkedList.getAllData(rotate_by_k(list, 3)));
