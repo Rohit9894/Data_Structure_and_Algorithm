@@ -10,12 +10,14 @@
 // 39 27 11 4 24 32 32 1                                                  // -1 -1 -1 -1 4 24 24 -1
 /**
  * Important points
- * *check stack's peek element is greater than to current element then pop the stack because when no 
+ * *check stack's peek element is greater than to current element then pop the stack because when no
  * element is present less then current element in stack so we put -1 in the answer array;
  */
 let arr = [39, 27, 11, 4, 24, 32, 32, 1];
 let ans = [];
 let stack = [];
+
+
 function smallerElement() {
   for (let i = 0; i < arr.length; i++) {
     while (stack.length != 0 && arr[i] < stack[stack.length - 1]) {
@@ -26,9 +28,8 @@ function smallerElement() {
     } else {
       ans.push(stack[stack.length - 1]);
     }
-    stack.push(arr[i]);
+    stack.push(arr[i])
   }
-  console.log(ans.join(" "))
+  console.log(ans);
 }
-smallerElement()
-
+smallerElement();
